@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pass Task 2</title>
+    <link rel="stylesheet" href="style.css" title="" />
+  </head>
+  <body>
+    <div>
+      <p class="topic">SIT120 - Introduction to Responsive Web Apps</p>
+      <p class="subTopic">Pass Task 2</p>
+      <p></p>
+      <p></p>
+    </div>
+    <hr />
+    <!--  String methods -->
+    <div class="string-process">
+      <div class="string-container">
+        <p class="tittle">JavaScript String Methods</p>
+        <div class="input-container">
+          <label class="input-label">Enter Value</label>
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Enter Value"
+            id="stringMethod"
+          />
+          <input
+            style="display: none; margin-top: 8px"
+            class="input-field"
+            placeholder="Enter require Value"
+            id="extra-input"
+          />
+          <input
+            style="display: none; margin-top: 8px"
+            class="input-field"
+            placeholder="Enter require Value"
+            id="extra-input-two"
+          />
+          <p
+            id="error"
+            style="color: red; text-align: start; font-size: 14px"
+          ></p>
+          <div class="select-container">
+            <label class="select-label">Select Option</label>
+            <select class="select-field" id="string-select">
+              <!-- <option value="" disabled selected>Select an option</option> -->
+              <option value="length">Length</option>
+              <option value="slice">Slice</option>
+              <option value="replace">Replace</option>
+              <option value="toUpperCase">ToUpperCase</option>
+              <option value="toLowerCase">ToLowerCase</option>
+              <option value="concat">Concat</option>
+              <option value="trim">Trim</option>
+              <option value="trimStart">TrimStart</option>
+              <option value="trimEnd">TrimEnd</option>
+              <option value="padStart">PadStart</option>
+              <option value="padEnd">PadEnd</option>
+              <option value="charAt">CharAt</option>
+              <option value="charCodeAt">CharCodeAt</option>
+              <option value="split">Split</option>
+            </select>
+          </div>
+
+          <button id="stringSubmit" class="submit-btn">Submit</button>
+        </div>
+      </div>
+      <p class="demo" id="string-demo"></p>
+    </div>
+
+    <!--  String methods End-->
+
+    <div class="string-process">
+      <div class="string-container">
+        <p class="tittle">JavaScript Number methods</p>
+        <div class="input-container">
+          <label class="input-label">Enter Value</label>
+          <input
+            type="number"
+            class="input-field"
+            placeholder="Enter Value"
+            id="number-method"
+          />
+          <p
+            id="displayOperator"
+            style="
+              color: black;
+              text-align: center;
+              font-size: 20px;
+              font-weight: 800;
+            "
+          >
+            +
+          </p>
+          <input
+            type="number"
+            style="margin-top: 4px"
+            class="input-field"
+            placeholder="Enter require Value"
+            id="extra-input-number"
+          />
+          <p
+            id="error-number-method"
+            style="color: red; text-align: start; font-size: 14px"
+          ></p>
+          <div class="select-container">
+            <label class="select-label">Select Option</label>
+            <select class="select-field" id="string-select-number">
+              <option value="addition">Addition</option>
+              <option value="subtraction">Subtraction</option>
+              <option value="multiplication">Multiplication</option>
+              <option value="division">Division</option>
+              <option value="toExponentia">To Exponentia</option>
+              <option value="toFixed">To Fixed</option>
+              <option value="toPrecision">To Precision</option>
+              <option value="toFixed">To Fixed</option>
+            </select>
+          </div>
+          <button id="numberSubmit" class="submit-btn">Submit</button>
+        </div>
+      </div>
+      <p class="demo" id="number-demo"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+.topic {
+  font-size: 20px;
+  font-weight: 400;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 50px;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+.input-label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #f2f2f2;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.input-field {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-field:focus {
+  border-color: #6c63ff;
+}
+
+.input-field::placeholder {
+  color: #ccc;
+}
+
+.submit-btn {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #5a54e8;
+}
+
+.select-container {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.select-label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #f2f2f2;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.select-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  background-image: url("arrow-down.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.select-field:focus {
+  border-color: #6c63ff;
+}
+
+.select-field::placeholder {
+  color: #ccc;
+}
+
+.submit-btn {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #5a54e8;
+}
+
+.string-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.tittle {
+  font-size: large;
+  font-weight: 600;
+  text-decoration: underline;
+  font-style: italic;
+}
+.string-process {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+}
+.demo {
+  font-size: 30px;
+  font-weight: 700;
+}

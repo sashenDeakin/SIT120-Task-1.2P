@@ -14,81 +14,30 @@ const numberDemo = document.getElementById("number-demo");
 const numberSubmitButton = document.getElementById("numberSubmit");
 const numberError = document.getElementById("error-number-method");
 
-function numberMethods() {
-  const options = [];
-  loopSelectOptions();
+const newDate = document.getElementById("newDate");
+const newTime = document.getElementById("newTime");
 
-  function formatOperation(params) {
-    if (params === options[1]) {
-      displayOperator.innerHTML = "-";
-    } else if (params === options[2]) {
-      displayOperator.innerHTML = "×";
-    } else if (params === options[3]) {
-      displayOperator.innerHTML = "÷";
-    } else if (params === options[0]) {
-      displayOperator.innerHTML = "+";
-    } else if (params === options[4]) {
-      displayOperator.innerHTML = "";
-      secondNumberInput.placeholder = "Enter toExponential Number";
-    } else if (params === options[5]) {
-      displayOperator.innerHTML = "";
-      secondNumberInput.placeholder = "Enter toFixed Number";
-    } else if (params === options[6]) {
-      displayOperator.innerHTML = "";
-      secondNumberInput.placeholder = "Enter toPrecision Number";
-    }
-  }
+function getDate(params) {
+  const currentDate = new Date(params);
+  const formattedDate = `${currentDate.getFullYear()}-${(
+    currentDate.getMonth() + 1
+  )
+    .toString()
+    .padStart(2, "0")}-${currentDate.getDate().toString().padStart(2, "0")}`;
+  newDate.innerHTML = formattedDate;
+}
 
-  function operations(first, second, operator) {
-    if (operator === options[0]) {
-      const sum = first + second;
-      numberDemo.innerHTML = sum.valueOf();
-    } else if (operator === options[1]) {
-      const sum = first - second;
-      numberDemo.innerHTML = sum;
-    } else if (operator === options[2]) {
-      const sum = first * second;
-      numberDemo.innerHTML = sum;
-    } else if (operator === options[3]) {
-      const sum = first / second;
-      numberDemo.innerHTML = sum;
-    } else if (operator === options[4]) {
-      const answer = first.toExponential(second);
-      numberDemo.innerHTML = answer;
-    } else if (operator === options[5]) {
-      const answer = first.toFixed(second);
-      numberDemo.innerHTML = answer;
-    } else if (operator === options[6]) {
-      const answer = first.toPrecision(second);
-      numberDemo.innerHTML = answer;
-    }
-  }
+function getTime(currentTime) {
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  //const seconds = currentTime.getSeconds();
 
-  numberSubmitButton.onclick = function () {
-    const firstInput = numberFirstInput.value;
-    const secondInput = secondNumberInput.value;
+  const formattedTime = `${String(hours).padStart(2, "0")}:${String(
+    minutes
+  ).padStart(2, "0")}`;
+  console.log(formattedTime);
 
-    if (!firstInput || !secondInput) {
-      numberError.innerHTML = "Please Enter Right Value";
-    }
-
-    operations(
-      Math.floor(firstInput),
-      Math.floor(secondInput),
-      numberSelector.value
-    );
-  };
-
-  function loopSelectOptions() {
-    for (let index = 0; index < numberSelector.options.length; index++) {
-      const element = numberSelector.options[index];
-      options.push(element.value);
-    }
-  }
-
-  numberSelector.onclick = function () {
-    formatOperation(numberSelector.value);
-  };
+  newTime.innerHTML = formattedTime;
 }
 
 function stringMethods() {
@@ -111,6 +60,7 @@ function stringMethods() {
 
   stringType.onclick = function () {
     selectProcess();
+    getTime(new Date());
   };
 
   stringSubmitButton.onclick = function () {
@@ -242,9 +192,117 @@ function stringMethods() {
 
     stringDemo.innerHTML = finalDemo;
 
+    if (!finalDemo) return;
+
+    demoBorderStyle(stringDemo);
+
     /*  console.log(options); */
   }
 }
 
+function numberMethods() {
+  const options = [];
+  loopSelectOptions();
+
+  function formatOperation(params) {
+    secondNumberInput.style.display = "flex";
+
+    if (params === options[1]) {
+      displayOperator.innerHTML = "-";
+    } else if (params === options[2]) {
+      displayOperator.innerHTML = "×";
+    } else if (params === options[3]) {
+      displayOperator.innerHTML = "÷";
+    } else if (params === options[0]) {
+      displayOperator.innerHTML = "+";
+    } else if (params === options[4]) {
+      displayOperator.innerHTML = "";
+      secondNumberInput.placeholder = "Enter toExponential Number";
+    } else if (params === options[5]) {
+      displayOperator.innerHTML = "";
+      secondNumberInput.placeholder = "Enter toFixed Number";
+    } else if (params === options[6]) {
+      displayOperator.innerHTML = "";
+      secondNumberInput.placeholder = "Enter toPrecision Number";
+    } else if (params === options[7]) {
+      displayOperator.innerHTML = "";
+      secondNumberInput.style.display = "none";
+      numberFirstInput.type = "text";
+    }
+  }
+
+  function operations(first, second, operator) {
+    var finalDemo;
+
+    if (operator === options[0]) {
+      const sum = first + second;
+      finalDemo = sum.valueOf();
+    } else if (operator === options[1]) {
+      const sum = first - second;
+      finalDemo = sum;
+    } else if (operator === options[2]) {
+      const sum = first * second;
+      finalDemo = sum;
+    } else if (operator === options[3]) {
+      const sum = first / second;
+      finalDemo = sum;
+    } else if (operator === options[4]) {
+      const answer = first.toExponential(second);
+      finalDemo = answer;
+    } else if (operator === options[5]) {
+      const answer = first.toFixed(second);
+      finalDemo = answer;
+    } else if (operator === options[6]) {
+      const answer = first.toPrecision(second);
+      finalDemo = answer;
+    } else if (operator === options[7]) {
+      const answer = Number(first);
+      finalDemo = answer;
+    }
+
+    numberDemo.innerHTML = finalDemo;
+
+    if (!finalDemo) return;
+
+    demoBorderStyle(numberDemo);
+  }
+
+  numberSubmitButton.onclick = function () {
+    const firstInput = numberFirstInput.value;
+    const secondInput = secondNumberInput.value;
+
+    if (!firstInput && !secondInput) {
+      numberError.innerHTML = "Please Enter Right Value";
+    }
+
+    operations(
+      Math.floor(firstInput),
+      Math.floor(secondInput),
+      numberSelector.value
+    );
+  };
+
+  function loopSelectOptions() {
+    for (let index = 0; index < numberSelector.options.length; index++) {
+      const element = numberSelector.options[index];
+      options.push(element.value);
+    }
+  }
+
+  numberSelector.onclick = function () {
+    formatOperation(numberSelector.value);
+    getTime(new Date());
+  };
+}
+
+function demoBorderStyle(params) {
+  params.style.borderStyle = "dotted";
+  params.style.borderColor = "#5a54e8";
+  params.style.padding = "20px";
+  params.style.borderRadius = "20px";
+}
+
+getDate(Date.now());
+getTime(new Date());
 stringMethods();
 numberMethods();

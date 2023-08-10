@@ -2,10 +2,11 @@
   font-size: 20px;
   font-weight: 400;
 }
-body {
+.container {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
-  margin: 50px;
+  padding: 50px;
+  border-radius: 10px;
 }
 
 .input-container {
@@ -118,7 +119,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  width: 60%;
 }
 
 .tittle {
@@ -136,4 +138,34 @@ body {
 .demo {
   font-size: 30px;
   font-weight: 700;
+  color: red;
+  /*   border-style: dotted;
+  border-color: #5a54e8;
+  padding: 20px;
+  border-radius: 20px; */
+  cursor: pointer;
+}
+
+.dateSections {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .string-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto !important;
+  }
+  .string-process {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+  }
 }

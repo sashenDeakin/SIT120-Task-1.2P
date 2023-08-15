@@ -17,6 +17,8 @@ const numberError = document.getElementById("error-number-method");
 const newDate = document.getElementById("newDate");
 const newTime = document.getElementById("newTime");
 
+console.log("SIT120 - Introduction to Responsive Web Apps - Pass Task 2");
+
 /* Date and Time */
 
 function getDate(params) {

@@ -17,6 +17,8 @@ const numberError = document.getElementById("error-number-method");
 const newDate = document.getElementById("newDate");
 const newTime = document.getElementById("newTime");
 
+/* Date and Time */
+
 function getDate(params) {
   const currentDate = new Date(params);
   const formattedDate = `${currentDate.getFullYear()}-${(
@@ -39,6 +41,8 @@ function getTime(currentTime) {
 
   newTime.innerHTML = formattedTime;
 }
+
+/* String Methods; */
 
 function stringMethods() {
   const options = [];
@@ -96,6 +100,7 @@ function stringMethods() {
       inputFelidValue.placeholder = "Enter First Word";
       extraInput.placeholder = "Enter Second Word";
       secondExtraInput.placeholder = "Enter Join Operator";
+      secondExtraInput.type = "text";
 
       updateInputValue("Hello");
     } else if (
@@ -199,6 +204,8 @@ function stringMethods() {
     /*  console.log(options); */
   }
 }
+
+/* Number Methods */
 
 function numberMethods() {
   const options = [];

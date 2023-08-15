@@ -94,6 +94,7 @@ function stringMethods() {
         extraInput.placeholder = "Enter Replace Word";
         secondExtraInput.style.display = "flex";
         secondExtraInput.placeholder = "Enter New Word";
+        secondExtraInput.type = "text";
         updateInputValue("My Name Is Sashen");
       }
     } else if (options[5] === stringType.value) {
@@ -103,6 +104,7 @@ function stringMethods() {
       extraInput.placeholder = "Enter Second Word";
       secondExtraInput.placeholder = "Enter Join Operator";
       secondExtraInput.type = "text";
+      extraInput.type = "text";
 
       updateInputValue("Hello");
     } else if (
@@ -282,6 +284,8 @@ function numberMethods() {
 
     if (!firstInput && !secondInput) {
       numberError.innerHTML = "Please Enter Right Value";
+    } else {
+      numberError.innerHTML = null;
     }
 
     operations(
